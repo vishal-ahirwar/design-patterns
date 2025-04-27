@@ -1,6 +1,12 @@
 
-
 # Design Patterns in C++ (with Aura)
+
+<p align="center">
+  <img src="https://img.shields.io/badge/C++-23-blue.svg" alt="C++23">
+  <img src="https://img.shields.io/badge/Build-Passing-brightgreen.svg" alt="Build Passing">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License">
+  <img src="https://img.shields.io/badge/Powered%20By-Aura-blueviolet.svg" alt="Aura CLI">
+</p>
 
 Welcome to the **Design Patterns** repository!  
 This project implements essential **Design Patterns** in **C++**, organized modularly using the [Aura](https://github.com/vishal-ahirwar/aura) project setup.  
@@ -59,16 +65,16 @@ Make sure you have:
 - CMake 3.20+
 - Ninja (optional but faster builds)
 - vcpkg (auto-handled if using Aura)
-- aura (optional)
-  
+
 ### Quick Build
 ```bash
-aura build <design-pattern name>
+aura build <design-pattern-name>
 ```
 or manually:
 ```bash
 cmake --preset default
 cmake --build --preset default
+./build/default/<design-pattern-name>/<design-pattern-name>.exe
 ```
 
 ---
@@ -94,3 +100,5 @@ This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for d
 ---
 
 ### 🔥 Made with love and C++ by [Vishal Ahirwar](https://github.com/vishal-ahirwar)
+
+---
