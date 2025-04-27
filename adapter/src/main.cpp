@@ -1,7 +1,6 @@
 // Auto Genrated C++ file by aura CLI
 // None
 #include <adapter/include/adapter.h>
-#include <adapter/src/adapter.cpp>
 int main(int argc, char *argv[])
 {
   srand(time(nullptr));

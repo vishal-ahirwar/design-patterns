@@ -1,14 +1,11 @@
-//Auto Genrated C++ file by aura CLI
-//None
-#include<iostream>
+// Auto Genrated C++ file by aura CLI
+// None
+#include <bridge/include/bridge.h>
+#include <print>
 #include<design-patternsconfig.h>
-int main(int argc,char*argv[])
+int main(int argc, char *argv[])
 {
-    std::cerr << "Hello, " << Project::COMPANY_NAME << std::endl;
-    std::cerr << Project::PROJECT_NAME << " v" << Project::VERSION_STRING << std::endl;
-    std::cerr << Project::COPYRIGHT_STRING << std::endl;
-    for(int i=0;i<argc;++i){
-      std::cerr<<argv[i]<<std::endl;
-    }
-    return 0;
+  std::print("v{}\n",Project::VERSION_STRING);
+  std::print("hello,{}\n",Project::COMPANY_NAME);
+  return 0;
 }
