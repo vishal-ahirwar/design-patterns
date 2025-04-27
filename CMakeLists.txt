@@ -5,5 +5,6 @@ project(design-patterns VERSION 1.0.0 LANGUAGES CXX)
 include(res/config.cmake)
 #@add_find_package Warning: Do not remove this line
 #@add_subproject Warning: Do not remove this line
+add_subdirectory(bridge)
 add_subdirectory(design-patterns)
 add_subdirectory(adapter)
