@@ -43,4 +43,5 @@ public:
   void uploadContents(const std::string &content) override;
   int getFreeSpace() override;
   std::string getServiceName() override;
+  virtual ~VirtualDeviceAdapter()=default;
 };
