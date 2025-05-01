@@ -1,14 +1,67 @@
-//Auto Genrated C++ file by aura CLI
-//None
-#include<iostream>
-#include<design-patternsconfig.h>
-int main(int argc,char*argv[])
+#include <iostream>
+#include <string>
+#include <memory>
+#include <print>
+using namespace std;
+
+class Storage
 {
-    std::cerr << "Hello, " << Project::COMPANY_NAME << std::endl;
-    std::cerr << Project::PROJECT_NAME << " v" << Project::VERSION_STRING << std::endl;
-    std::cerr << Project::COPYRIGHT_STRING << std::endl;
-    for(int i=0;i<argc;++i){
-      std::cerr<<argv[i]<<std::endl;
+public:
+  virtual const string getContents() = 0;
+  virtual ~Storage() = default;
+};
+
+class SecureStorage : public Storage
+{
+public:
+  explicit SecureStorage(const string &data) : m_Contents(data) {}
+
+  const string getContents() override
+  {
+    return m_Contents;
+  }
+
+private:
+  const string m_Contents;
+};
+
+class SecureStorageProxy : public Storage
+{
+public:
+  explicit SecureStorageProxy(const string &data, const int code) : m_SecureStorage(make_unique<SecureStorage>(data)), m_SecretCode(code) {}
+
+  const string getContents() override
+  {
+    if (authorized() == true)
+    {
+      return m_SecureStorage->getContents();
     }
-    return 0;
+    else
+    {
+      return "Access denied!";
+    }
+  }
+
+private:
+  bool authorized()
+  {
+    return m_SecretCode == 42;
+  }
+
+  unique_ptr<SecureStorage> m_SecureStorage;
+  const int m_SecretCode;
+};
+
+int main()
+{
+  // SecureStorage secureStorage("Top Secret Information");
+  int key{};
+  std::print("Enter the key>");
+  std::cin >> key;
+  SecureStorageProxy secureStorage("Top Secret Information", key);
+
+  // Limit access to sensitive data
+  cout << "Sensitive Data: " << secureStorage.getContents() << endl;
+
+  return 0;
 }
