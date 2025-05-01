@@ -5,6 +5,7 @@ project(design-patterns VERSION 1.0.0 LANGUAGES CXX)
 include(res/config.cmake)
 #@add_find_package Warning: Do not remove this line
 #@add_subproject Warning: Do not remove this line
+add_subdirectory(singleton)
 add_subdirectory(proxy)
 add_subdirectory(flyweight)
 add_subdirectory(facade)
