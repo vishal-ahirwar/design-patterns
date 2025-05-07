@@ -61,7 +61,11 @@ public:
 
 int main()
 {
-  std::unique_ptr<GUIFactory> gui = std::make_unique<GUI>();
-  gui->createButton()->click();
-  gui->createCheckbox()->check();
+  std::unique_ptr<GUIFactory> factory = std::make_unique<GUI>();
+  
+  std::unique_ptr<Button> button{factory->createButton()};
+  std::unique_ptr<Checkbox> checkbox{factory->createCheckbox()};
+
+  button->click();
+  checkbox->check();
 }
